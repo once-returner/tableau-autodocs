@@ -84,47 +84,13 @@ Alongside the JSON file, a Markdown file is generated. This functions as the dat
 
 ## Executing the Python scripts
 
-Start by opening up git Bash and [cloning our repository](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository). If you don't have the pipenv library installed, go ahead and do that now. You can find the basics of using pipenv [here](https://pipenv.readthedocs.io/en/latest/basics/).
+Start by opening up git Bash and [cloning our repository](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository). Then, run this command in pip:
 
 ```bash
-$ pip install pipenv
+$ pip install -r requirements.txt
 ```
 
-Once you have pipenv installed, navigate to the project folder and run the following commands to start up a virtual environment with the correct dependencies.
-
-```bash
-$ pipenv install
-
-Installing dependencies from Pipfile.lock (6ffcd4)…
-  ================================ 7/7 - 00:00:09
-To activate this project's virtualenv, run pipenv shell.
-Alternatively, run a command inside the virtualenv with pipenv run.
-
-$ pipenv shell
-
-Launching subshell in virtual environment…
-```
-
-The behavior depends on the context, but likely you will be kept in the same terminal window and can then run the following commands. Once you enter your Tableau credentials, each data source successfully downloaded will print out and any invalid datasources will be removed (supported filetypes are .tds, .tdsx, and .hyper).
-
-```bash
-$ pipenv run python datasourceRefresh.py
-
-Datasources will download to: C:\somewhere\Published Extracts
-
-Server URL: https://something.someplace.com/
-Username: yourusername
-Password: yourpassword
-
-Sample Datasource 1
-Sample Datasource 2
-Sample Datasource 3
-
-sampleExcelDatasource.tdsx is invalid, removing from directory.
-
-$ pipenv run python datasourceDocumentation.py
-
-```
+Using an environment is recommended but not required.
 
 ## Contribute
 
